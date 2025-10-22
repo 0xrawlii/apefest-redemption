@@ -1,0 +1,45 @@
+HOW TO ADD YOUR UFO IMAGE
+==========================
+
+1. PLACE YOUR UFO IMAGE IN THIS FOLDER
+   - Recommended format: PNG with transparent background
+   - Recommended size: 400x400px or larger
+   - Name it something simple like "ufo.png"
+
+2. CONVERT TO BASE64
+
+   OPTION A - Mac Terminal:
+   ------------------------
+   cd "/Users/rawlii/Documents/Projects/apefest redemption"
+   base64 -i assets/ufo.png
+   
+   (Copy the output that appears)
+
+   OPTION B - Online Tool:
+   -----------------------
+   1. Go to: https://base64.guru/converter/encode/image
+   2. Upload your UFO image
+   3. Click "Encode image to Base64"
+   4. Copy the result
+
+3. UPDATE THE HTML FILE
+   
+   1. Open index.html in a text editor
+   2. Find this line (around line 330):
+      <img src="data:image/svg+xml,..." 
+   
+   3. Replace the entire src value with:
+      For PNG: src="data:image/png;base64,YOUR_BASE64_HERE"
+      For JPG: src="data:image/jpeg;base64,YOUR_BASE64_HERE"
+      
+   4. Save the file
+
+4. TEST
+   Open index.html in your browser and click the UFO!
+
+Example:
+--------
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." 
+     alt="UFO" 
+     class="ufo-image">
+
